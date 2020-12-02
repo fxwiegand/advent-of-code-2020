@@ -1,5 +1,5 @@
-use std::str::FromStr;
 use itertools::partition;
+use std::str::FromStr;
 
 pub(crate) fn solve_day1() -> u32 {
     let mut input = Vec::new();
