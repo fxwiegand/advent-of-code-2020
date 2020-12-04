@@ -1,6 +1,6 @@
 use itertools::Itertools;
-use std::str::FromStr;
 use regex::Regex;
+use std::str::FromStr;
 
 pub(crate) fn solve_day4() -> u32 {
     let input_file = include_str!("day4.txt");
@@ -49,7 +49,7 @@ pub(crate) fn solve_day4_part2() -> u32 {
                     if !(num >= 1920 && num <= 2002) {
                         valid = false;
                     }
-                },
+                }
                 "iyr" => {
                     if !(val.len() == 4) {
                         valid = false;
@@ -58,7 +58,7 @@ pub(crate) fn solve_day4_part2() -> u32 {
                     if !(num >= 2010 && num <= 2020) {
                         valid = false;
                     }
-                },
+                }
                 "eyr" => {
                     if !(val.len() == 4) {
                         valid = false;
@@ -67,7 +67,7 @@ pub(crate) fn solve_day4_part2() -> u32 {
                     if !(num >= 2020 && num <= 2030) {
                         valid = false;
                     }
-                },
+                }
                 "hgt" => {
                     if val.ends_with("cm") {
                         let h = u32::from_str(val.trim_end_matches("cm")).unwrap();
@@ -82,19 +82,19 @@ pub(crate) fn solve_day4_part2() -> u32 {
                     } else {
                         valid = false;
                     }
-                },
+                }
                 "hcl" => {
                     let re = Regex::new(r"^#(?:[0-9a-fA-F]{3}){1,2}$").unwrap();
                     if !re.is_match(val) {
                         valid = false;
                     }
-                },
+                }
                 "ecl" => {
                     let col_options = vec!["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
                     if !col_options.contains(&val) {
                         valid = false;
                     }
-                },
+                }
                 "pid" => {
                     let re = Regex::new(r"^\d{9}$").unwrap();
                     if !re.is_match(val) {
