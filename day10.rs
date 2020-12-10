@@ -1,5 +1,5 @@
-use std::str::FromStr;
 use itertools::Itertools;
+use std::str::FromStr;
 
 pub(crate) fn solve_day10() -> u64 {
     let input_file = include_str!("day10.txt");
@@ -22,7 +22,7 @@ pub(crate) fn solve_day10() -> u64 {
         last = n;
     }
     three_joltages += 1;
-    one_joltages*three_joltages
+    one_joltages * three_joltages
 }
 
 pub(crate) fn solve_day10_part2() -> u64 {
@@ -46,7 +46,7 @@ pub(crate) fn solve_day10_part2() -> u64 {
 
     let last = joltages.len() - 1;
     let mut streak = 0;
-    for (i,jolt) in joltages.into_iter().enumerate() {
+    for (i, jolt) in joltages.into_iter().enumerate() {
         if jolt == 1 {
             streak += 1;
         } else {
@@ -61,10 +61,10 @@ pub(crate) fn solve_day10_part2() -> u64 {
     let mut result = 1;
     for s in succesive_one_joltages {
         match s {
-            2 => {result = result*2;}
-            3 => {result = result*4;}
-            4 => {result = result*7;},
-            5 => {result = result*13;},
+            2 => result = result * 2,
+            3 => result = result * 4,
+            4 => result = result * 7,
+            5 => result = result * 13,
             _ => {}
         };
     }
