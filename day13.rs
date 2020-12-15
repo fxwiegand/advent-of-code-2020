@@ -4,13 +4,13 @@ use std::str::FromStr;
 
 pub(crate) fn solve_day13() -> i32 {
     let input_file = include_str!("day13.txt");
-    let mut dep_time = input_file
+    let dep_time = input_file
         .lines()
         .take(1)
         .map(|s| i32::from_str(s).unwrap())
         .collect_vec()[0];
 
-    let mut bus_ids = input_file.lines().skip(1).collect_vec()[0]
+    let bus_ids = input_file.lines().skip(1).collect_vec()[0]
         .split(',')
         .filter(|s| s != &"x")
         .map(|s| i32::from_str(s).unwrap())
@@ -30,7 +30,7 @@ pub(crate) fn solve_day13() -> i32 {
 
 pub(crate) fn solve_day13_part2() -> u128 {
     let input_file = include_str!("day13.txt");
-    let mut bus_ids = input_file.lines().skip(1).collect_vec()[0]
+    let bus_ids = input_file.lines().skip(1).collect_vec()[0]
         .split(',')
         .map(|s| {
             if s != "x" {

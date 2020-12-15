@@ -1,5 +1,4 @@
 use itertools::Itertools;
-use std::cmp::max;
 
 pub(crate) fn solve_day5() -> u32 {
     let input_file = include_str!("day5.txt");

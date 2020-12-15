@@ -1,6 +1,5 @@
 use itertools::Itertools;
-use std::collections::{HashMap, HashSet};
-use std::hash::Hash;
+use std::collections::HashMap;
 use std::str::FromStr;
 
 pub(crate) fn solve_day7() -> u32 {
@@ -25,7 +24,7 @@ pub(crate) fn solve_day7() -> u32 {
         let entry = bag_map.entry(outer_bag.to_owned()).or_insert_with(Vec::new);
         for bag in contained_bags {
             if !bag.starts_with("no") {
-                let quantity =
+                let _quantity =
                     u32::from_str(bag.clone().split_whitespace().collect_vec()[0]).unwrap();
                 let bag_without_quantity = bag.split_at(2).1.trim_end_matches('s').to_owned();
                 entry.push(bag_without_quantity);

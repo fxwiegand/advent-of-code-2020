@@ -52,7 +52,7 @@ pub(crate) fn solve_day8_part2() -> i64 {
 
     let mut result = 0;
     'outer: for (i, _) in operations.clone().iter().enumerate() {
-        let mut o;
+        let o;
         if operations[i].0 == "jmp" {
             operations[i].0 = "nop";
             o = true;

@@ -170,9 +170,9 @@ fn update_seats_part2(seats: &Vec<Vec<char>>) -> Vec<Vec<char>> {
 
 fn look_far(seats: &Vec<Vec<char>>, start_x: usize, start_y: usize, x: i32, y: i32) -> char {
     if ((start_x as i32 + x) as usize) < seats.len()
-        && (start_x as i32 + x) as usize >= 0
+        && start_x as i32 + x >= 0
         && ((start_y as i32 + y) as usize) < seats[0].len()
-        && ((start_y as i32 + y) as usize) >= 0
+        && (start_y as i32 + y) >= 0
     {
         if seats[(start_x as i32 + x) as usize][(start_y as i32 + y) as usize] != '.' {
             seats[(start_x as i32 + x) as usize][(start_y as i32 + y) as usize]

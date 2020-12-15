@@ -3,7 +3,7 @@ use std::str::FromStr;
 
 pub(crate) fn solve_day12() -> i32 {
     let input_file = include_str!("day12.txt");
-    let mut navigation = input_file
+    let navigation = input_file
         .lines()
         .collect_vec()
         .into_iter()
@@ -151,7 +151,7 @@ pub(crate) fn solve_day12() -> i32 {
 
 pub(crate) fn solve_day12_part2() -> i32 {
     let input_file = include_str!("day12.txt");
-    let mut navigation = input_file
+    let navigation = input_file
         .lines()
         .collect_vec()
         .into_iter()

@@ -1,14 +1,13 @@
 use itertools::Itertools;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::HashMap;
 use std::str::FromStr;
 
 pub(crate) fn solve_day14() -> u64 {
     let input_file = include_str!("day14.txt");
-    let mut input = input_file.lines().collect_vec();
+    let input = input_file.lines().collect_vec();
 
     let mut masks = Vec::new();
     let mut mask = "";
-    let mut tmp_mask = "";
     let mut tmp_masks = Vec::new();
     for line in input {
         let tmp = line.split_whitespace().collect_vec();
@@ -21,7 +20,7 @@ pub(crate) fn solve_day14() -> u64 {
             _ => {
                 let mem_adress =
                     u64::from_str(tmp[0].trim_end_matches(']').trim_start_matches("mem[")).unwrap();
-                tmp_masks.push(((mem_adress, u64::from_str(tmp[2]).unwrap())));
+                tmp_masks.push((mem_adress, u64::from_str(tmp[2]).unwrap()));
             }
         };
     }
@@ -61,10 +60,10 @@ fn bit_or(mask: &str, i: u64) -> u64 {
         match (bit_mask, bit_int) {
             ('X', a) => {
                 if a == '1' {
-                    result += (2u64.pow(e as u32))
+                    result += 2u64.pow(e as u32)
                 }
             }
-            ('1', _) => result += (2u64.pow(e as u32)),
+            ('1', _) => result += 2u64.pow(e as u32),
             ('0', _) => {}
             _ => unreachable!(),
         }
@@ -74,11 +73,10 @@ fn bit_or(mask: &str, i: u64) -> u64 {
 
 pub(crate) fn solve_day14_part2() -> u64 {
     let input_file = include_str!("day14.txt");
-    let mut input = input_file.lines().collect_vec();
+    let input = input_file.lines().collect_vec();
 
     let mut masks = Vec::new();
     let mut mask = "";
-    let mut tmp_mask = "";
     let mut tmp_masks = Vec::new();
     for line in input {
         let tmp = line.split_whitespace().collect_vec();
@@ -91,7 +89,7 @@ pub(crate) fn solve_day14_part2() -> u64 {
             _ => {
                 let mem_adress =
                     u64::from_str(tmp[0].trim_end_matches(']').trim_start_matches("mem[")).unwrap();
-                tmp_masks.push(((mem_adress, u64::from_str(tmp[2]).unwrap())));
+                tmp_masks.push((mem_adress, u64::from_str(tmp[2]).unwrap()));
             }
         };
     }
@@ -127,31 +125,31 @@ fn bit_or2(mask: &str, i: u64) -> Vec<u64> {
         }
     }
     num_str = num_str.chars().rev().collect();
-    let xses = mask.chars().filter(|c| *c == 'X').collect_vec().len();
+    let _xses = mask.chars().filter(|c| *c == 'X').collect_vec().len();
     let mut result = Vec::new();
     let mut s_result = 0;
     result.push(0);
     for (e, (bit_mask, bit_int)) in mask.chars().rev().zip_eq(num_str.chars().rev()).enumerate() {
         match (bit_mask, bit_int) {
-            ('X', a) => {
+            ('X', _) => {
                 for el in result.clone() {
-                    let new_el = el + (2u64.pow(e as u32));
+                    let new_el = el + 2u64.pow(e as u32);
                     result.push(new_el);
                 }
             }
             ('1', _) => {
-                s_result += (2u64.pow(e as u32));
+                s_result += 2u64.pow(e as u32);
             }
             ('0', a) => {
                 if a == '1' {
-                    s_result += (2u64.pow(e as u32));
+                    s_result += 2u64.pow(e as u32);
                 }
             }
             _ => unreachable!(),
         }
     }
     let mut final_res = Vec::new();
-    for mut elem in &result {
+    for elem in &result {
         final_res.push(elem + s_result);
     }
     final_res

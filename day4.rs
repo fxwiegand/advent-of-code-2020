@@ -5,7 +5,7 @@ use std::str::FromStr;
 pub(crate) fn solve_day4() -> u32 {
     let input_file = include_str!("day4.txt");
     let fields = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-    let optionals = vec!["cid"];
+    let _optionals = vec!["cid"];
     let rows = input_file.split("\n\n").collect_vec();
     let mut count_valid = 0;
     for r in rows {
@@ -25,7 +25,7 @@ pub(crate) fn solve_day4() -> u32 {
 pub(crate) fn solve_day4_part2() -> u32 {
     let input_file = include_str!("day4.txt");
     let fields = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
-    let optionals = vec!["cid"];
+    let _optionals = vec!["cid"];
     let rows = input_file.split("\n\n").collect_vec();
     let mut count_valid = 0;
     for r in rows {
