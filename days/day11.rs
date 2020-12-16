@@ -1,7 +1,7 @@
 use itertools::Itertools;
 
 pub(crate) fn solve_day11() -> u32 {
-    let input_file = include_str!("day11.txt");
+    let input_file = include_str!("../resources/day11.txt");
     let mut seats = input_file
         .lines()
         .collect_vec()
@@ -191,7 +191,7 @@ fn look_far(seats: &Vec<Vec<char>>, start_x: usize, start_y: usize, x: i32, y: i
 }
 
 pub(crate) fn solve_day11_part2() -> u32 {
-    let input_file = include_str!("day11.txt");
+    let input_file = include_str!("../resources/day11.txt");
     let mut seats = input_file
         .lines()
         .collect_vec()

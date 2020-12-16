@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use std::str::FromStr;
 
 pub(crate) fn solve_day8() -> i64 {
-    let input_file = include_str!("day8.txt");
+    let input_file = include_str!("../resources/day8.txt");
     let operations = input_file
         .lines()
         .collect_vec()
@@ -37,7 +37,7 @@ pub(crate) fn solve_day8() -> i64 {
 }
 
 pub(crate) fn solve_day8_part2() -> i64 {
-    let input_file = include_str!("day8.txt");
+    let input_file = include_str!("../resources/day8.txt");
     let mut operations = input_file
         .lines()
         .collect_vec()

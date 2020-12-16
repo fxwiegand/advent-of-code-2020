@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::str::FromStr;
 
 pub(crate) fn solve_day14() -> u64 {
-    let input_file = include_str!("day14.txt");
+    let input_file = include_str!("../resources/day14.txt");
     let input = input_file.lines().collect_vec();
 
     let mut masks = Vec::new();
@@ -72,7 +72,7 @@ fn bit_or(mask: &str, i: u64) -> u64 {
 }
 
 pub(crate) fn solve_day14_part2() -> u64 {
-    let input_file = include_str!("day14.txt");
+    let input_file = include_str!("../resources/day14.txt");
     let input = input_file.lines().collect_vec();
 
     let mut masks = Vec::new();

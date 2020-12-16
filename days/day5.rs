@@ -1,7 +1,7 @@
 use itertools::Itertools;
 
 pub(crate) fn solve_day5() -> u32 {
-    let input_file = include_str!("day5.txt");
+    let input_file = include_str!("../resources/day5.txt");
     let rows = input_file
         .lines()
         .map(|s| s.chars().collect_vec())
@@ -36,7 +36,7 @@ pub(crate) fn solve_day5() -> u32 {
 }
 
 pub(crate) fn solve_day5_part2() -> u32 {
-    let input_file = include_str!("day5.txt");
+    let input_file = include_str!("../resources/day5.txt");
     let rows = input_file
         .lines()
         .map(|s| s.chars().collect_vec())

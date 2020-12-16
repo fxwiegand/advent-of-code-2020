@@ -1,23 +1,12 @@
 #![feature(destructuring_assignment)]
 use clap::Clap;
+use days::{
+    day1, day10, day11, day12, day13, day14, day15, day16, day2, day3, day4, day5, day6, day7,
+    day8, day9,
+};
 use std::error::Error;
 
-mod day1;
-mod day10;
-mod day11;
-mod day12;
-mod day13;
-mod day14;
-mod day15;
-mod day16;
-mod day2;
-mod day3;
-mod day4;
-mod day5;
-mod day6;
-mod day7;
-mod day8;
-mod day9;
+mod days;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let opts: Opts = Opts::parse();

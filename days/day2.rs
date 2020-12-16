@@ -3,7 +3,7 @@ use itertools::Itertools;
 use std::str::FromStr;
 
 pub(crate) fn solve_day2() -> u32 {
-    let input_file = include_str!("day2.txt");
+    let input_file = include_str!("../resources/day2.txt");
     let mut ranges = Vec::new();
     let mut chars = Vec::new();
     let mut pwds = Vec::new();
@@ -44,7 +44,7 @@ fn check_pwd(lower_bound: u32, upper_bound: u32, c: char, password: String) -> b
 }
 
 pub(crate) fn solve_day2_part2() -> u32 {
-    let input_file = include_str!("day2.txt");
+    let input_file = include_str!("../resources/day2.txt");
     let mut ranges = Vec::new();
     let mut chars = Vec::new();
     let mut pwds = Vec::new();

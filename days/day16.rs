@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::str::FromStr;
 
 pub(crate) fn solve_day16() -> u32 {
-    let input_file = include_str!("day16.txt");
+    let input_file = include_str!("../resources/day16.txt");
     let temp = input_file.split("\n\n").collect_vec();
 
     let min_max = temp[0]
@@ -60,7 +60,7 @@ pub(crate) fn solve_day16() -> u32 {
 }
 
 pub(crate) fn solve_day16_part2() -> u64 {
-    let input_file = include_str!("day16.txt");
+    let input_file = include_str!("../resources/day16.txt");
     let temp = input_file.split("\n\n").collect_vec();
 
     let my_ticket = temp[1]

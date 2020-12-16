@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::str::FromStr;
 
 pub(crate) fn solve_day7() -> u32 {
-    let input_file = include_str!("day7.txt");
+    let input_file = include_str!("../resources/day7.txt");
     let restrictions = input_file
         .lines()
         .collect_vec()
@@ -65,7 +65,7 @@ fn check_bag(bag_to_check: String, bag_map: HashMap<String, Vec<String>>) -> boo
 }
 
 pub(crate) fn solve_day7_part2() -> u64 {
-    let input_file = include_str!("day7.txt");
+    let input_file = include_str!("../resources/day7.txt");
     let restrictions = input_file
         .lines()
         .collect_vec()

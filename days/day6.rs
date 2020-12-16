@@ -2,7 +2,7 @@ use itertools::Itertools;
 use std::collections::HashSet;
 
 pub(crate) fn solve_day6() -> u32 {
-    let input_file = include_str!("day6.txt");
+    let input_file = include_str!("../resources/day6.txt");
     input_file
         .split("\n\n")
         .collect_vec()
@@ -18,7 +18,7 @@ pub(crate) fn solve_day6() -> u32 {
 }
 
 pub(crate) fn solve_day6_part2() -> u32 {
-    let input_file = include_str!("day6.txt");
+    let input_file = include_str!("../resources/day6.txt");
     input_file
         .split("\n\n")
         .collect_vec()

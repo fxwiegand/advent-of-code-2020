@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use std::str::FromStr;
 
 pub(crate) fn solve_day13() -> i32 {
-    let input_file = include_str!("day13.txt");
+    let input_file = include_str!("../resources/day13.txt");
     let dep_time = input_file
         .lines()
         .take(1)
@@ -29,7 +29,7 @@ pub(crate) fn solve_day13() -> i32 {
 }
 
 pub(crate) fn solve_day13_part2() -> u128 {
-    let input_file = include_str!("day13.txt");
+    let input_file = include_str!("../resources/day13.txt");
     let bus_ids = input_file.lines().skip(1).collect_vec()[0]
         .split(',')
         .map(|s| {

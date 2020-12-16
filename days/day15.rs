@@ -11,7 +11,7 @@ pub(crate) fn solve_day15_part2() -> u64 {
 }
 
 fn solve_day15_general(stop: usize) -> u64 {
-    let input_file = include_str!("day15.txt");
+    let input_file = include_str!("../resources/day15.txt");
     let input = input_file.lines().collect_vec()[0]
         .split(',')
         .map(|s| u64::from_str(s).unwrap())

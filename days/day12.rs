@@ -2,7 +2,7 @@ use itertools::Itertools;
 use std::str::FromStr;
 
 pub(crate) fn solve_day12() -> i32 {
-    let input_file = include_str!("day12.txt");
+    let input_file = include_str!("../resources/day12.txt");
     let navigation = input_file
         .lines()
         .collect_vec()
@@ -150,7 +150,7 @@ pub(crate) fn solve_day12() -> i32 {
 }
 
 pub(crate) fn solve_day12_part2() -> i32 {
-    let input_file = include_str!("day12.txt");
+    let input_file = include_str!("../resources/day12.txt");
     let navigation = input_file
         .lines()
         .collect_vec()

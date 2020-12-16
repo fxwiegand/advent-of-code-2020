@@ -2,7 +2,7 @@ use itertools::Itertools;
 use std::str::FromStr;
 
 pub(crate) fn solve_day10() -> u64 {
-    let input_file = include_str!("day10.txt");
+    let input_file = include_str!("../resources/day10.txt");
     let numbers = input_file
         .lines()
         .map(|n| u64::from_str(n).unwrap())
@@ -26,7 +26,7 @@ pub(crate) fn solve_day10() -> u64 {
 }
 
 pub(crate) fn solve_day10_part2() -> u64 {
-    let input_file = include_str!("day10.txt");
+    let input_file = include_str!("../resources/day10.txt");
     let numbers = input_file
         .lines()
         .map(|n| u64::from_str(n).unwrap())

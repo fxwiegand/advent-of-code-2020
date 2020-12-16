@@ -3,7 +3,7 @@ use regex::Regex;
 use std::str::FromStr;
 
 pub(crate) fn solve_day4() -> u32 {
-    let input_file = include_str!("day4.txt");
+    let input_file = include_str!("../resources/day4.txt");
     let fields = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
     let _optionals = vec!["cid"];
     let rows = input_file.split("\n\n").collect_vec();
@@ -23,7 +23,7 @@ pub(crate) fn solve_day4() -> u32 {
 }
 
 pub(crate) fn solve_day4_part2() -> u32 {
-    let input_file = include_str!("day4.txt");
+    let input_file = include_str!("../resources/day4.txt");
     let fields = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
     let _optionals = vec!["cid"];
     let rows = input_file.split("\n\n").collect_vec();

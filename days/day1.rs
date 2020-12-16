@@ -3,7 +3,7 @@ use std::str::FromStr;
 
 pub(crate) fn solve_day1() -> u32 {
     let mut input = Vec::new();
-    let input_file = include_str!("day1.txt");
+    let input_file = include_str!("../resources/day1.txt");
     for s in input_file.split_whitespace() {
         input.push(u32::from_str(s).unwrap());
     }
@@ -27,7 +27,7 @@ pub(crate) fn solve_day1() -> u32 {
 
 pub(crate) fn solve_day1_part2() -> u32 {
     let mut input = Vec::new();
-    let input_file = include_str!("day1.txt");
+    let input_file = include_str!("../resources/day1.txt");
     for s in input_file.split_whitespace() {
         input.push(u32::from_str(s).unwrap());
     }
