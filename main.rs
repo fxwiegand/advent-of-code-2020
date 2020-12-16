@@ -1,3 +1,4 @@
+#![feature(destructuring_assignment)]
 use clap::Clap;
 use std::error::Error;
 
@@ -8,6 +9,7 @@ mod day12;
 mod day13;
 mod day14;
 mod day15;
+mod day16;
 mod day2;
 mod day3;
 mod day4;
@@ -51,6 +53,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         (14, true) => day14::solve_day14_part2().to_string(),
         (15, false) => day15::solve_day15().to_string(),
         (15, true) => day15::solve_day15_part2().to_string(),
+        (16, false) => day16::solve_day16().to_string(),
+        (16, true) => day16::solve_day16_part2().to_string(),
         _ => unimplemented!(),
     };
 
