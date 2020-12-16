@@ -26,7 +26,7 @@ jobs:
       - name: Check format
         run: cargo fmt -- --check
   
-  Linting:
+  Building:
      runs-on: ubuntu-latest
      steps:
        - name: Checkout repository
@@ -37,9 +37,6 @@ jobs:
          with:
            toolchain: nightly
            override: true
-           components: clippy
 
-       - name: Lint with clippy
-         uses: actions-rs/clippy-check@v1
-         with:
-           token: ${{ secrets.GITHUB_TOKEN }}
+       - name: Build
+         run: cargo build
