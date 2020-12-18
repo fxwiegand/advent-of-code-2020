@@ -11,10 +11,13 @@ edition = "2018"
 itertools = "0.9.0"
 regex = "1"
 clap = "3.0.0-beta.2"
+pest = "2.1.3"
+pest_derive = "2.1.0"
+lazy_static = "*"
 
 [[bin]]
 name = "advent-of-code-2020"
-path = "main.rs"
+path = "src/main.rs"
 
 [profile.release]
 lto = "fat"
