@@ -1,10 +1,12 @@
 #![feature(destructuring_assignment)]
+use crate::days::day19;
 use clap::Clap;
 use days::{
     day1, day10, day11, day12, day13, day14, day15, day16, day17, day18, day2, day3, day4, day5,
     day6, day7, day8, day9,
 };
 use std::error::Error;
+
 extern crate pest;
 #[macro_use]
 extern crate pest_derive;
@@ -53,6 +55,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         (17, true) => day17::solve_day17_part2().to_string(),
         (18, false) => day18::solve_day18().to_string(),
         (18, true) => day18::solve_day18_part2().to_string(),
+        (19, false) => day19::solve_day19().to_string(),
+        (19, true) => "not present. After trying for some time and figuring out that pest doesn't have the features to work here I decided to move on".to_string(),
         _ => unimplemented!(),
     };
 
