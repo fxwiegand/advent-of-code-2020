@@ -1,5 +1,5 @@
 #![feature(destructuring_assignment)]
-use crate::days::{day19, day20};
+use crate::days::{day19, day20, day21};
 use clap::Clap;
 use days::{
     day1, day10, day11, day12, day13, day14, day15, day16, day17, day18, day2, day3, day4, day5,
@@ -58,6 +58,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         (19, false) => day19::solve_day19().to_string(),
         (19, true) => "not present. After trying for some time and figuring out that pest doesn't have the features to work here I decided to move on".to_string(),
         (20, false) => day20::solve_day20().to_string(),
+        (21, false) => day21::solve_day21().to_string(),
         _ => unimplemented!(),
     };
 
