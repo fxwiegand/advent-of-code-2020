@@ -121,7 +121,7 @@ pub(crate) fn solve_day23_part2() -> u64 {
                 &cups[(current_cup_index + 1)..=999999],
                 &cups[0..((current_cup_index + 4) % 1000000)],
             ]
-                .concat()
+            .concat()
         } else {
             cups[(current_cup_index + 1)..current_cup_index + 4].to_vec()
         };
@@ -194,5 +194,5 @@ pub(crate) fn solve_day23_part2() -> u64 {
     let one_index = cups.iter().position(|&r| r == 1).unwrap();
     let r1 = cups[(one_index + 1) % 999999];
     let r2 = cups[(one_index + 2) % 999999];
-    r1*r2
+    r1 * r2
 }
