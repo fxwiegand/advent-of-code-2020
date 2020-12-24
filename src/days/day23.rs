@@ -13,10 +13,10 @@ pub(crate) fn solve_day23() -> String {
     for _ in 0..100 {
         let current_cup = cups[current_cup_index];
 
-        let pick_ups = if current_cup_index > 5 {
+        let pick_ups = if current_cup_index > (cups.len() - 4) {
             [
-                &cups[(current_cup_index + 1)..=8],
-                &cups[0..((current_cup_index + 4) % 9)],
+                &cups[(current_cup_index + 1)..cups.len()],
+                &cups[0..((current_cup_index + 4) % cups.len())],
             ]
             .concat()
         } else {
@@ -35,32 +35,32 @@ pub(crate) fn solve_day23() -> String {
             } else {
                 match cups[current_cup_index] as i32 - mi as i32 {
                     0 => {
-                        if !pick_ups.contains(&(9 as u32)) {
-                            destination_cup = 9;
+                        if !pick_ups.contains(&(cups.len() as u32)) {
+                            destination_cup = cups.len() as u32;
                             break;
                         } else {
                             continue;
                         }
                     }
                     -1 => {
-                        if !pick_ups.contains(&(8 as u32)) {
-                            destination_cup = 8;
+                        if !pick_ups.contains(&(cups.len() as u32 - 1)) {
+                            destination_cup = cups.len() as u32 - 1;
                             break;
                         } else {
                             continue;
                         }
                     }
                     -2 => {
-                        if !pick_ups.contains(&(7 as u32)) {
-                            destination_cup = 7;
+                        if !pick_ups.contains(&(cups.len() as u32 - 2)) {
+                            destination_cup = cups.len() as u32 - 2;
                             break;
                         } else {
                             continue;
                         }
                     }
                     -3 => {
-                        if !pick_ups.contains(&(6 as u32)) {
-                            destination_cup = 6;
+                        if !pick_ups.contains(&(cups.len() as u32 - 3)) {
+                            destination_cup = cups.len() as u32 - 3;
                             break;
                         } else {
                             continue;
@@ -78,7 +78,8 @@ pub(crate) fn solve_day23() -> String {
             .filter(|a| !pick_ups.contains(a))
             .map(|x| *x)
             .collect_vec();
-        let next_cup = new_cups[(new_cups.iter().position(|&r| r == current_cup).unwrap() + 1) % 6];
+        let next_cup = new_cups
+            [(new_cups.iter().position(|&r| r == current_cup).unwrap() + 1) % (cups.len() - 3)];
         let destination_cup_index = new_cups.iter().position(|&r| r == destination_cup).unwrap();
         for p in pick_ups.into_iter().rev() {
             new_cups.insert(destination_cup_index + 1, p);
@@ -111,15 +112,15 @@ pub(crate) fn solve_day23_part2() -> u64 {
     let mut current_cup_index = 0;
 
     for i in 0..10000000 {
-        if i % 1000 == 0 {
-            println!("Processed {:?} steps", i);
+        if i % 100000 == 0 {
+            println!("Processed {:?} iterations", i)
         }
         let current_cup = cups[current_cup_index];
 
-        let pick_ups = if current_cup_index > 999996 {
+        let pick_ups = if current_cup_index > (cups.len() - 4) {
             [
-                &cups[(current_cup_index + 1)..=999999],
-                &cups[0..((current_cup_index + 4) % 1000000)],
+                &cups[(current_cup_index + 1)..cups.len()],
+                &cups[0..((current_cup_index + 4) % cups.len())],
             ]
             .concat()
         } else {
@@ -136,34 +137,34 @@ pub(crate) fn solve_day23_part2() -> u64 {
                     continue;
                 }
             } else {
-                match cups[current_cup_index] as i64 - mi as i64 {
+                match cups[current_cup_index] as i32 - mi as i32 {
                     0 => {
-                        if !pick_ups.contains(&(1000000 as u64)) {
-                            destination_cup = 1000000;
+                        if !pick_ups.contains(&(cups.len() as u64)) {
+                            destination_cup = cups.len() as u64;
                             break;
                         } else {
                             continue;
                         }
                     }
                     -1 => {
-                        if !pick_ups.contains(&(999999 as u64)) {
-                            destination_cup = 999999;
+                        if !pick_ups.contains(&(cups.len() as u64 - 1)) {
+                            destination_cup = cups.len() as u64 - 1;
                             break;
                         } else {
                             continue;
                         }
                     }
                     -2 => {
-                        if !pick_ups.contains(&(999998 as u64)) {
-                            destination_cup = 999998;
+                        if !pick_ups.contains(&(cups.len() as u64 - 2)) {
+                            destination_cup = cups.len() as u64 - 2;
                             break;
                         } else {
                             continue;
                         }
                     }
                     -3 => {
-                        if !pick_ups.contains(&(999997 as u64)) {
-                            destination_cup = 999997;
+                        if !pick_ups.contains(&(cups.len() as u64 - 3)) {
+                            destination_cup = cups.len() as u64 - 3;
                             break;
                         } else {
                             continue;
@@ -181,7 +182,8 @@ pub(crate) fn solve_day23_part2() -> u64 {
             .filter(|a| !pick_ups.contains(a))
             .map(|x| *x)
             .collect_vec();
-        let next_cup = new_cups[(new_cups.iter().position(|&r| r == current_cup).unwrap() + 1) % 6];
+        let next_cup = new_cups
+            [(new_cups.iter().position(|&r| r == current_cup).unwrap() + 1) % (cups.len() - 3)];
         let destination_cup_index = new_cups.iter().position(|&r| r == destination_cup).unwrap();
         for p in pick_ups.into_iter().rev() {
             new_cups.insert(destination_cup_index + 1, p);
@@ -190,9 +192,11 @@ pub(crate) fn solve_day23_part2() -> u64 {
         current_cup_index = next_cup_index;
         cups = new_cups;
     }
-
+    println!("{:?}", cups.clone());
     let one_index = cups.iter().position(|&r| r == 1).unwrap();
-    let r1 = cups[(one_index + 1) % 999999];
-    let r2 = cups[(one_index + 2) % 999999];
+    let r1 = cups[(one_index + 1) % cups.len()];
+    let r2 = cups[(one_index + 2) % cups.len()];
+    println!("{:?}", r1);
+    println!("{:?}", r2);
     r1 * r2
 }
